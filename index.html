@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ใจความ – เอกสารอ่านยาก เหลือแต่ใจความ</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='13' fill='%231f3fae'/%3E%3Cpath d='M14 9h14l8 8v22a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2z' fill='%23fff'/%3E%3Crect x='16' y='21' width='16' height='6' rx='1.5' fill='%23ffe45c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&family=Prompt:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;
+--bg:#f1f4f9;--paper:#fff;--ink:#11213a;--mute:#516078;--line:#cdd6e4;--brand:#1f3fae;--on:#fff;--mark:#ffe45c;--mkt:38%;--mkb:92%;--mkink:#11213a;
+--hot:#c0262d;--hotbg:#fdecee;--warn:#8a4a00;--warnbg:#fff4e0;--ok:#1a6b3c;--okbg:#e5f5ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+--bg:#0d1526;--paper:#16213a;--ink:#eaf0fb;--mute:#a3b1c9;--line:#2b3a59;--brand:#8aa6ff;--on:#0d1526;--mkt:0%;--mkb:100%;
+--hot:#ff8d94;--hotbg:#3a1b24;--warn:#f5bd78;--warnbg:#2f2616;--ok:#7ad9a4;--okbg:#143125}}
+:root[data-theme="dark"]{color-scheme:dark;
+--bg:#0d1526;--paper:#16213a;--ink:#eaf0fb;--mute:#a3b1c9;--line:#2b3a59;--brand:#8aa6ff;--on:#0d1526;--mkt:0%;--mkb:100%;
+--hot:#ff8d94;--hotbg:#3a1b24;--warn:#f5bd78;--warnbg:#2f2616;--ok:#7ad9a4;--okbg:#143125}
+html{scroll-padding-top:env(safe-area-inset-top,0px);font-size:clamp(17px,.5vw + 15px,20px);-webkit-text-size-adjust:100%}
+html.big{font-size:clamp(21px,.5vw + 19px,24px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Thai","Sarabun",Tahoma,sans-serif;line-height:1.7;overflow-wrap:anywhere}
+.wrap{max-width:1080px;margin:0 auto;padding:14px clamp(14px,4vw,32px) 64px}
+button{font:inherit;color:inherit;cursor:pointer;min-height:48px}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.bar-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 18px}
+.brand{display:flex;align-items:center;gap:10px;font-family:Prompt,"Noto Sans Thai",sans-serif;font-weight:700;font-size:1.5rem}
+.brand svg{width:40px;height:40px;flex:none}
+.size{border:2px solid var(--line);background:var(--paper);border-radius:12px;padding:6px 14px;font-weight:600}
+h1{font-family:Prompt,"Noto Sans Thai",sans-serif;font-weight:700;font-size:clamp(1.7rem,3.2vw + .8rem,2.7rem);line-height:1.25;margin:0 0 8px}
+.lead{margin:0 0 20px;color:var(--mute)}
+.grid{display:grid;gap:28px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:940px){.grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}.right{position:sticky;top:16px}}
+label.t{display:block;font-weight:600;margin-bottom:6px}
+textarea{width:100%;min-height:clamp(170px,28vh,300px);resize:vertical;font:inherit;line-height:1.6;color:var(--ink);background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px;align-items:center;color:var(--mute);font-size:.9rem}
+.chip{border:2px solid var(--line);background:var(--paper);border-radius:999px;padding:2px 16px;font-size:.9rem;min-height:44px}
+.chip:hover{border-color:var(--brand)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.go{background:var(--brand);color:var(--on);border:0;border-radius:14px;padding:12px 26px;font-family:Prompt,"Noto Sans Thai",sans-serif;font-weight:700;font-size:1.1rem;flex:1 1 220px;min-height:56px}
+.go:disabled{opacity:.5;cursor:default}
+.ghost{background:transparent;border:2px solid var(--line);border-radius:14px;padding:8px 16px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.file input{position:absolute;opacity:0;width:1px;height:1px}
+.file:focus-within{outline:3px solid var(--brand);outline-offset:2px}
+.note{margin:12px 0 0;padding:12px 14px;border-radius:12px;background:var(--warnbg);color:var(--warn);font-size:.92rem}
+.sheet{position:relative;overflow:hidden;background:var(--paper);border:2px solid var(--line);border-radius:18px;box-shadow:0 6px 0 -2px var(--line)}
+.sec{padding:16px 20px;border-top:2px dashed var(--line)}
+.sec:first-child{border-top:0}
+.sec h2{margin:0 0 6px;font-size:.95rem;color:var(--mute);font-weight:600}
+.reading{background:var(--okbg);transition:background .2s}
+.head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.doc{margin:0 0 6px;color:var(--mute);font-size:.95rem}
+.sum{margin:0;font-size:1.3rem;font-weight:600;line-height:1.75}
+.mk{background:linear-gradient(transparent var(--mkt),var(--mark) var(--mkt),var(--mark) var(--mkb),transparent var(--mkb));color:var(--mkink);padding:0 .2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.stamp{flex:none;font-family:Prompt,"Noto Sans Thai",sans-serif;font-weight:700;font-size:.95rem;line-height:1.3;text-align:center;padding:4px 12px;border:3px solid currentColor;border-radius:10px;box-shadow:inset 0 0 0 2px var(--paper),inset 0 0 0 4px currentColor;transform:rotate(-6deg);animation:st .4s cubic-bezier(.2,1.4,.4,1) .15s both}
+.stamp.high{color:var(--hot)}.stamp.normal{color:var(--brand)}.stamp.none{color:var(--ok)}
+@keyframes st{from{opacity:0;transform:scale(1.9) rotate(-14deg)}to{opacity:1;transform:rotate(-6deg)}}
+.chk{list-style:none;margin:0;padding:0}
+.chk li{margin:6px 0}
+.chk label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;min-height:44px}
+.chk input{appearance:none;-webkit-appearance:none;flex:none;width:30px;height:30px;margin:4px 0 0;border:3px solid var(--brand);border-radius:8px;display:grid;place-content:center;cursor:pointer}
+.chk input:checked{background:var(--brand)}
+.chk input:checked::after{content:"✓";color:var(--on);font-weight:700;font-size:1.1rem;line-height:1}
+.chk input:checked+span{color:var(--mute);text-decoration:line-through}
+.when{margin:0;font-family:Prompt,"Noto Sans Thai",sans-serif;font-weight:700;font-size:1.45rem;line-height:1.4}
+.warn{background:var(--warnbg)}
+.warn h2,.warn li{color:var(--warn)}
+.warn ul{margin:0;padding-left:1.3rem}
+dl{margin:0;display:grid;gap:8px 20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+dt{font-weight:600}dd{margin:0;color:var(--mute);font-size:.95rem}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.say{background:var(--ink);color:var(--paper);border:0;border-radius:14px;padding:8px 20px;font-weight:700;display:inline-flex;gap:8px;align-items:center}
+.seg{display:inline-flex;border:2px solid var(--line);border-radius:14px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:6px 14px;font-weight:600}
+.seg button[aria-pressed="true"]{background:var(--brand);color:var(--on)}
+.fine{font-size:.85rem;color:var(--mute);margin:14px 2px 0}
+.empty{border:2px dashed var(--line);border-radius:18px;padding:28px 22px;color:var(--mute);text-align:center}
+.empty b{display:block;font-family:Prompt,"Noto Sans Thai",sans-serif;font-size:1.2rem;color:var(--ink);margin-bottom:6px}
+.ln{height:13px;border-radius:7px;background:var(--line);margin:14px 20px;animation:pu 1.2s ease-in-out infinite alternate}
+.scan{position:absolute;left:0;right:0;height:36px;background:var(--mark);opacity:.4;animation:sc 2.2s ease-in-out infinite alternate}
+.lbody{position:relative;padding:8px 20px 20px;background:linear-gradient(transparent,var(--paper) 30%)}
+.stat{margin:0 0 10px;font-weight:600}
+.pbar{height:10px;border-radius:6px;background:var(--line);overflow:hidden;margin-bottom:14px}
+.pbar i{display:block;height:100%;width:6%;background:var(--brand);border-radius:6px;transition:width .3s}
+@keyframes pu{from{opacity:.45}to{opacity:1}}
+@keyframes sc{from{top:6%}to{top:60%}}
+@media (prefers-reduced-motion:reduce){.ln,.scan,.stamp{animation:none}.pbar i{transition:none}}
+.acts{display:flex;gap:8px;align-items:center}
+.set{position:relative}
+.set summary{list-style:none;cursor:pointer;border:2px solid var(--line);background:var(--paper);border-radius:12px;padding:6px 14px;font-weight:600;min-height:44px;display:flex;align-items:center}
+.set summary::-webkit-details-marker{display:none}
+.pn{position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:min(320px,84vw);background:var(--paper);border:2px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.pn h3{margin:0 0 8px;font-size:.95rem;color:var(--mute);font-weight:600}
+.sw{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.sw button{width:44px;height:44px;border-radius:50%;border:3px solid var(--line);padding:0}
+.sw button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 3px var(--paper)}
+.hist{margin-top:30px}
+.hist h2{font-size:1.1rem;margin:0 0 10px;font-family:Prompt,"Noto Sans Thai",sans-serif}
+.hi{display:flex;width:100%;justify-content:space-between;gap:10px;text-align:left;border:2px solid var(--line);background:var(--paper);border-radius:14px;padding:8px 14px;margin-bottom:8px;align-items:center}
+.hi:hover{border-color:var(--brand)}
+.hd{color:var(--mute);font-size:.85rem;flex:none}
+.ic{width:1.25em;height:1.25em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.big{width:52px;height:52px;color:var(--brand);display:block;margin:0 auto 12px;stroke-width:1.6}
+.brand svg{width:46px;height:46px}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:20px;padding:clamp(14px,3vw,22px);box-shadow:0 6px 0 -2px var(--line)}
+.chip,.set summary,.ghost{gap:8px}
+.chip{display:inline-flex;align-items:center}
+.chip .ic{color:var(--brand)}
+.sec h2{display:flex;align-items:center;gap:8px}
+.sec h2 .ic{color:var(--brand)}
+.warn h2 .ic{color:var(--warn)}
+.hist h2{display:flex;align-items:center;gap:8px}
+.go{box-shadow:0 4px 0 -1px rgba(0,0,0,.28)}
+.go:active{transform:translateY(2px);box-shadow:none}
+.brand{white-space:nowrap}
+@media (max-width:520px){
+  .brand{font-size:1.35rem;gap:8px}.brand svg{width:40px;height:40px}
+  .acts{gap:6px}.set summary,.size{padding:4px 10px;font-size:.82rem;min-height:44px}
+  .head{flex-direction:column-reverse;gap:12px}.stamp{align-self:flex-end}
+  .sum{font-size:1.2rem}
+}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+<symbol id="i-pill" viewBox="0 0 24 24"><path d="M10.5 20.5l-7-7a4.9 4.9 0 0 1 7-7l7 7a4.9 4.9 0 0 1-7 7z"/><path d="M8.5 8.5l7 7"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+</defs></svg>
+<div class="wrap">
+  <div class="bar-top">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" style="fill:var(--logo,#1f3fae)"/><path d="M14 9h14l8 8v22a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2z" fill="#fff"/><path d="M28 9v6a2 2 0 0 0 2 2h6z" fill="#cfd8f5"/><rect x="16" y="21" width="16" height="6" rx="1.5" fill="#ffe45c"/><rect x="18" y="22.7" width="12" height="2.6" rx="1.3" fill="#11213a"/><rect x="16" y="31" width="10" height="2.6" rx="1.3" fill="#8b97b8"/><circle cx="35" cy="35" r="7" fill="#17a05a"/><path d="M31.7 35.2l2.4 2.4 4.4-4.8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      ใจความ
+    </div>
+    <div class="acts"><details class="set"><summary><svg class="ic"><use href="#i-sliders"/></svg>ปรับแต่ง</summary><div class="pn"><h3>สีหลัก</h3><div class="sw" id="sw"></div><h3>โหมดหน้าจอ</h3><div class="seg" id="md"></div></div></details><button class="size" id="size" type="button" aria-pressed="false">ตัวอักษรใหญ่</button></div>
+  </div>
+
+  <div class="grid">
+    <section class="left">
+      <h1>เอกสารอ่านยาก เหลือแต่ใจความ</h1>
+      <p class="lead">วางข้อความหรือถ่ายรูปจดหมาย ใบแจ้งหนี้ ใบยา หรือข้อความที่ส่งต่อกันในไลน์ แล้วจะรู้ว่าต้องทำอะไร ก่อนเมื่อไหร่ และต้องระวังอะไร</p>
+      <div class="card"><label class="t" for="doc">ข้อความในเอกสาร</label>
+      <textarea id="doc" placeholder="วางข้อความที่นี่"></textarea>
+      <div class="chips">ลองตัวอย่าง:
+        <button class="chip" type="button" data-s="tax"><svg class="ic"><use href="#i-receipt"/></svg>ใบแจ้งภาษี</button>
+        <button class="chip" type="button" data-s="med"><svg class="ic"><use href="#i-pill"/></svg>ใบสั่งยา</button>
+        <button class="chip" type="button" data-s="sms"><svg class="ic"><use href="#i-box"/></svg>ข้อความพัสดุ</button>
+      </div>
+      <div class="row">
+        <button class="go" id="go" type="button">สรุปใจความ</button>
+        <label class="file ghost" id="imgWrap" hidden><svg class="ic"><use href="#i-camera"/></svg>ถ่ายรูป / แนบรูป<input id="img" type="file" accept="image/*"></label>
+        <button class="ghost" id="clear" type="button" hidden></button>
+      </div>
+      <p class="note" id="msg" hidden role="status"></p></div>
+      <section class="hist" id="hist" hidden><h2><svg class="ic"><use href="#i-clock"/></svg>ประวัติที่เคยสรุป</h2><div id="hl"></div><p class="fine">เก็บเฉพาะผลสรุป ไม่เก็บต้นฉบับ และอยู่ในเครื่องนี้เท่านั้น</p><button class="ghost" id="hclr" type="button">ล้างประวัติ</button></section>
+    </section>
+
+    <section class="right" id="right" aria-live="polite">
+      <div class="empty" id="empty"><svg class="ic big"><use href="#i-doc"/></svg><b>ใจความจะขึ้นตรงนี้</b>บอกว่าเอกสารคืออะไร ต้องทำอะไรบ้าง ต้องทำก่อนเมื่อไหร่ และมีอะไรต้องระวัง พร้อมอ่านออกเสียงให้ฟังได้</div>
+      <div id="out"></div>
+    </section>
+  </div>
+</div>
+
+<script>
+/* เวอร์ชันเว็บไซต์จริง: เรียก /api/explain แทนการใช้ Claude ในแอป */
+(() => {
+  const toB64 = f => new Promise((ok, no) => {
+    const i = new Image();
+    i.onload = () => { const k = Math.min(1, 1600 / Math.max(i.width, i.height)), c = document.createElement("canvas");
+      c.width = i.width * k; c.height = i.height * k; c.getContext("2d").drawImage(i, 0, 0, c.width, c.height);
+      ok(c.toDataURL("image/jpeg", .85).split(",")[1]); };
+    i.onerror = no; i.src = URL.createObjectURL(f);
+  });
+  const fn = async () => { throw { code: "unsupported" }; };
+  fn.limits = async () => ({ images: true });
+  fn.json = async (input, o = {}) => {
+    const body = { doc: input.slice(PROMPT.length).replace(/^\s*ข้อความในเอกสาร:\s*/, "").replace(/^\s*\(เอกสารอยู่ในรูปที่แนบมา\)\s*$/, "") };
+    try {
+      if (o.images && o.images[0]) body.image = { media_type: "image/jpeg", data: await toB64(o.images[0]) };
+      const r = await fetch("/api/explain", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body), signal: o.signal });
+      if (!r.ok) throw { code: r.status === 429 ? "rate_limited" : "error" };
+      return await r.json();
+    } catch (e) { throw e && e.name === "AbortError" ? { code: "cancelled" } : (e && e.code ? e : { code: "error" }); }
+  };
+  window.claude = { use: async () => fn };
+})();
+</script>
+<script>
+const $ = s => document.querySelector(s);
+const SAMPLES = {
+  tax: "เรื่อง แจ้งผลการตรวจสอบการชำระภาษีเงินได้บุคคลธรรมดา ปีภาษี 2568\nตามที่ท่านยื่นแบบ ภ.ง.ด.90 ปรากฏว่ามียอดภาษีชำระไม่ครบ จำนวน 3,420 บาท ขอให้ท่านชำระส่วนที่ขาดพร้อมเงินเพิ่มร้อยละ 1.5 ต่อเดือน ภายในวันที่ 15 ธันวาคม 2569 หากพ้นกำหนดจะดำเนินการตามประมวลรัษฎากรต่อไป",
+  med: "ยาแก้อักเสบ Amoxicillin 500 mg รับประทานครั้งละ 1 แคปซูล วันละ 3 ครั้ง หลังอาหาร เช้า กลางวัน เย็น จนยาหมด (7 วัน)\nยาลดกรด Omeprazole 20 mg รับประทานครั้งละ 1 เม็ด วันละ 1 ครั้ง ก่อนอาหารเช้า 30 นาที\nหากมีผื่นขึ้น หายใจลำบาก ให้หยุดยาและพบแพทย์ทันที",
+  sms: "พัสดุของคุณถูกตีกลับ เนื่องจากที่อยู่ไม่ชัดเจน กรุณายืนยันที่อยู่และชำระค่าธรรมเนียมจัดส่งใหม่ 25 บาท ภายใน 24 ชม. ที่ kerry-th-track.example/pay หากไม่ดำเนินการ พัสดุจะถูกทำลาย"
+};
+const PROMPT = `คุณเป็นผู้ช่วยอธิบายเอกสารให้คนไทยทุกวัย รวมถึงผู้สูงอายุที่ไม่คุ้นกับภาษาราชการหรือภาษากฎหมาย
+กติกา: ใช้ภาษาไทยง่ายๆ ประโยคสั้น อธิบายเฉพาะสิ่งที่มีในเอกสาร ห้ามเดาตัวเลข วันที่ หรือชื่อหน่วยงานที่ไม่ได้ระบุ ถ้าไม่มีให้ใส่ null
+ถ้าดูเหมือนข้อความหลอกลวง ให้ตั้ง urgency เป็น "high" และเตือนใน warnings ว่าไม่ควรกดลิงก์หรือโอนเงิน พร้อมบอกวิธีตรวจสอบกับต้นทางจริง
+ถ้าไม่ใช่เอกสารหรืออ่านไม่ออก ให้ readable เป็น false
+ตอบเป็น JSON เท่านั้น ไม่มีข้อความอื่น ตามรูปแบบ:
+{"readable":true,"doc_type":"ชนิดเอกสารสั้นๆ","urgency":"high|normal|none","summary":"สรุป 1-2 ประโยคว่าเอกสารนี้คืออะไรและเกี่ยวกับผู้อ่านอย่างไร","actions":["สิ่งที่ต้องทำ เรียงตามลำดับ ไม่เกิน 5 ข้อ"],"deadline":"กำหนดเวลาที่ระบุในเอกสาร หรือ null","warnings":["ผลเสียหรือสิ่งที่ต้องระวัง ไม่เกิน 3 ข้อ"],"terms":[{"term":"ศัพท์ยาก","meaning":"ความหมายง่ายๆ"}]}
+urgency: high = ต้องรีบทำหรือมีผลเสียถ้าช้า, normal = ทำตามกำหนดปกติ, none = ไม่ต้องทำอะไร`;
+const STEPS = ["กำลังอ่านเอกสาร…", "กำลังหาสิ่งที่ต้องทำ…", "กำลังหากำหนดเวลา…", "กำลังเรียบเรียงให้เข้าใจง่าย…"];
+const LABEL = { high: "ต้องรีบจัดการ", normal: "ทำตามกำหนด", none: "ไม่ต้องทำอะไร" };
+
+let sample = null, imgFile = null, ctl = null, stopLoad = () => {};
+const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x != null) n.textContent = x; return n; };
+const show = t => { const m = $("#msg"); m.textContent = t; m.hidden = !t; };
+
+(async () => {
+  try { if (window.claude) sample = await claude.use("sample"); } catch (e) {}
+  if (!sample) { show("ส่วนสรุปใจความใช้ได้เมื่อเปิดหน้านี้ในแอป Claude"); $("#go").disabled = true; return; }
+  try { const l = await sample.limits(); if (l && l.images) $("#imgWrap").hidden = false; } catch (e) {}
+})();
+
+try { if (localStorage.getItem("big") === "1") toggleBig(true); } catch (e) {}
+function toggleBig(on) {
+  document.documentElement.classList.toggle("big", on);
+  $("#size").setAttribute("aria-pressed", on);
+  $("#size").textContent = on ? "ตัวอักษรปกติ" : "ตัวอักษรใหญ่";
+  try { localStorage.setItem("big", on ? "1" : "0"); } catch (e) {}
+}
+$("#size").onclick = () => toggleBig(!document.documentElement.classList.contains("big"));
+document.querySelectorAll(".chip").forEach(b => b.onclick = () => { $("#doc").value = SAMPLES[b.dataset.s]; clearImg(); show(""); });
+$("#img").onchange = e => { imgFile = e.target.files[0] || null; const c = $("#clear"); c.hidden = !imgFile; if (imgFile) c.textContent = "ลบรูป: " + imgFile.name.slice(0, 16); };
+function clearImg() { imgFile = null; $("#img").value = ""; $("#clear").hidden = true; }
+$("#clear").onclick = clearImg;
+
+/* ---------- loading ---------- */
+function loader() {
+  stopSpeak();
+  const out = $("#out"); out.replaceChildren(); $("#empty").hidden = true;
+  const s = el("div", "sheet");
+  [92, 100, 70, 96, 60, 84].forEach(w => { const l = el("div", "ln"); l.style.width = "calc(" + w + "% - 40px)"; s.append(l); });
+  s.append(el("div", "scan"));
+  const b = el("div", "lbody"), st = el("p", "stat", STEPS[0]), pb = el("div", "pbar"), f = el("i");
+  pb.append(f);
+  const x = el("button", "ghost", "ยกเลิก"); x.type = "button"; x.onclick = () => ctl && ctl.abort();
+  b.append(st, pb, x); s.append(b); out.append(s);
+  let i = 0, p = 6;
+  const t1 = setInterval(() => { p += (92 - p) * .07; f.style.width = p + "%"; }, 300);
+  const t2 = setInterval(() => { i = (i + 1) % STEPS.length; st.textContent = STEPS[i]; }, 2400);
+  stopLoad = () => { clearInterval(t1); clearInterval(t2); };
+}
+
+const ERR = { not_granted: "ต้องกดอนุญาตให้ใช้ Claude ก่อน แล้วลองใหม่อีกครั้ง", rate_limited: "ใช้งานถี่เกินไป รอสักครู่แล้วลองใหม่", cancelled: "" };
+$("#go").onclick = async () => {
+  if (!sample) return;
+  const text = $("#doc").value.trim();
+  if (!text && !imgFile) { show("วางข้อความหรือแนบรูปเอกสารก่อนนะ"); return; }
+  show(""); loader(); $("#go").disabled = true;
+  ctl = new AbortController();
+  try {
+    const input = PROMPT + (text ? "\n\nข้อความในเอกสาร:\n" + text : "\n\n(เอกสารอยู่ในรูปที่แนบมา)");
+    const opts = { signal: ctl.signal };
+    if (imgFile) opts.images = [imgFile];
+    const d = await sample.json(input, opts);
+    stopLoad(); render(d); saveHist(d);
+  } catch (e) {
+    stopLoad(); $("#out").replaceChildren(); $("#empty").hidden = false;
+    const c = e && e.code;
+    show(c in ERR ? ERR[c] : "สรุปไม่สำเร็จ ลองใหม่อีกครั้ง หรือลดความยาวข้อความ");
+  } finally { $("#go").disabled = false; }
+};
+
+/* ---------- read aloud ---------- */
+const synth = window.speechSynthesis;
+let token = 0, rate = .85, current = null, lastParts = [];
+const thVoice = () => synth && synth.getVoices().find(v => /^th/i.test(v.lang));
+function mark(n) { if (current) current.classList.remove("reading"); current = n; if (n) n.classList.add("reading"); }
+function stopSpeak() { token++; if (synth) synth.cancel(); mark(null); const b = $("#say"); if (b) b.lastChild.textContent = "ฟังสรุป"; }
+function speak(parts) {
+  stopSpeak(); const my = token, btn = $("#say");
+  if (!thVoice()) show("เครื่องนี้อาจยังไม่มีเสียงภาษาไทย ถ้าไม่ได้ยินเสียง ให้เพิ่มเสียงไทยในการตั้งค่าของเครื่อง");
+  btn.lastChild.textContent = "หยุดอ่าน";
+  parts.forEach((p, i) => {
+    const u = new SpeechSynthesisUtterance(p.text); u.lang = "th-TH"; u.rate = rate;
+    const v = thVoice(); if (v) u.voice = v;
+    u.onstart = () => { if (my === token) mark(p.el); };
+    u.onend = u.onerror = () => { if (my === token && i === parts.length - 1) stopSpeak(); };
+    synth.speak(u);
+  });
+}
+
+/* ---------- result ---------- */
+const SIC = { "สิ่งที่ต้องทำ": "list", "ภายในเมื่อไหร่": "cal", "ต้องระวัง": "alert", "คำที่อ่านยาก": "book" };
+function sec(cls, title) { const s = el("div", "sec " + (cls || "")); if (title) { const h = el("h2"); h.append(icon(SIC[title]), document.createTextNode(title)); s.append(h); } return s; }
+function render(d) {
+  const out = $("#out"); out.replaceChildren(); lastParts = [];
+  if (!d || d.readable === false) {
+    const e = el("div", "empty"); e.append(el("b", null, "อ่านไม่ออกว่าเป็นเอกสารอะไร"), "ลองวางข้อความให้ครบ หรือถ่ายรูปให้ชัดขึ้น"); out.append(e); return;
+  }
+  const u = ["high", "normal", "none"].includes(d.urgency) ? d.urgency : "normal";
+  const acts = (d.actions || []).map(String), warns = (d.warnings || []).map(String);
+  const tools = el("div", "tools");
+  if (synth) {
+    const say = el("button", "say"); say.id = "say"; say.type = "button";
+    say.append(speakerIcon(), document.createTextNode("ฟังสรุป"));
+    say.onclick = () => token && synth.speaking ? stopSpeak() : speak(lastParts);
+    const seg = el("div", "seg"); seg.setAttribute("role", "group"); seg.setAttribute("aria-label", "ความเร็วเสียง");
+    [["ช้า", .85], ["ปกติ", 1.05]].forEach(([n, r]) => {
+      const b = el("button", null, n); b.type = "button"; b.setAttribute("aria-pressed", r === rate);
+      b.onclick = () => { rate = r; seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); if (synth.speaking) speak(lastParts); };
+      seg.append(b);
+    });
+    tools.append(say, seg);
+  }
+  const cp = el("button", "ghost"); cp.type = "button"; cp.append(icon("copy"), document.createTextNode("คัดลอก"));
+  cp.onclick = async () => {
+    const t = [d.doc_type, d.summary, "", ...acts.map((a, i) => (i + 1) + ". " + a), d.deadline ? "ภายใน: " + d.deadline : "", ...warns.map(w => "ระวัง: " + w)].join("\n");
+    try { await navigator.clipboard.writeText(t); cp.textContent = "คัดลอกแล้ว"; } catch (e) { cp.textContent = "คัดลอกไม่ได้"; }
+  };
+  tools.append(cp); out.append(tools);
+
+  const sheet = el("article", "sheet");
+  const head = sec("head"), hl = el("div");
+  hl.append(el("p", "doc", d.doc_type || "เอกสาร"));
+  const sum = el("p", "sum"); sum.append(el("span", "mk", d.summary || "")); hl.append(sum);
+  head.append(hl, el("div", "stamp " + u, LABEL[u])); sheet.append(head);
+  lastParts.push({ el: head, text: (d.doc_type || "") + ". " + (d.summary || "") });
+
+  if (acts.length) {
+    const s = sec("", "สิ่งที่ต้องทำ"), ul = el("ul", "chk");
+    acts.forEach(a => { const li = el("li"), lb = el("label"), cb = el("input"); cb.type = "checkbox"; lb.append(cb, el("span", null, a)); li.append(lb); ul.append(li); });
+    s.append(ul); sheet.append(s);
+    lastParts.push({ el: s, text: "สิ่งที่ต้องทำ " + acts.map((a, i) => "ข้อ " + (i + 1) + " " + a).join(". ") });
+  }
+  if (d.deadline) {
+    const s = sec("", "ภายในเมื่อไหร่"); s.append(el("p", "when", d.deadline)); sheet.append(s);
+    lastParts.push({ el: s, text: "ภายใน " + d.deadline });
+  }
+  if (warns.length) {
+    const s = sec("warn", "ต้องระวัง"), ul = el("ul"); warns.forEach(w => ul.append(el("li", null, w))); s.append(ul); sheet.append(s);
+    lastParts.push({ el: s, text: "ต้องระวัง " + warns.join(". ") });
+  }
+  if (d.terms && d.terms.length) {
+    const s = sec("", "คำที่อ่านยาก"), dl = el("dl");
+    d.terms.forEach(t => { const w = el("div"); w.append(el("dt", null, t.term || ""), el("dd", null, t.meaning || "")); dl.append(w); });
+    s.append(dl); sheet.append(s);
+  }
+  out.append(sheet);
+  out.append(el("p", "fine", "ใจความสรุปให้อัตโนมัติจากข้อความที่ให้มา อาจคลาดเคลื่อนได้ ก่อนจ่ายเงินหรือเซ็นอะไร ควรตรวจกับต้นฉบับ หรือโทรถามหน่วยงานโดยใช้เบอร์ทางการ"));
+  if (window.matchMedia("(max-width:939px)").matches) out.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function icon(n) { const N = "http://www.w3.org/2000/svg", s = document.createElementNS(N, "svg"), u = document.createElementNS(N, "use"); s.setAttribute("class", "ic"); s.setAttribute("aria-hidden", "true"); u.setAttribute("href", "#i-" + n); s.append(u); return s; }
+function speakerIcon() {
+  const n = "http://www.w3.org/2000/svg", s = document.createElementNS(n, "svg"), p = document.createElementNS(n, "path");
+  s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("width", "22"); s.setAttribute("height", "22"); s.setAttribute("aria-hidden", "true");
+  p.setAttribute("d", "M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z");
+  p.setAttribute("fill", "currentColor"); s.append(p); return s;
+}
+/* ---------- tone ---------- */
+const PAL = [["น้ำเงิน", "#1f3fae", "#8aa6ff"], ["เขียว", "#0f6b4f", "#6fd6b0"], ["ม่วง", "#6a2fb0", "#c3a0ff"], ["ชมพู", "#b3245f", "#ff9cc2"]];
+const MODES = [["อัตโนมัติ", "auto"], ["สว่าง", "light"], ["มืด", "dark"]];
+let tone = { p: 0, m: "auto" };
+try { Object.assign(tone, JSON.parse(localStorage.getItem("tone") || "{}")); } catch (e) {}
+const mq = matchMedia("(prefers-color-scheme:dark)");
+function applyTone() {
+  const r = document.documentElement, p = PAL[tone.p] || PAL[0], dark = tone.m === "dark" || (tone.m === "auto" && mq.matches);
+  if (tone.m === "auto") r.removeAttribute("data-theme"); else r.setAttribute("data-theme", tone.m);
+  r.style.setProperty("--brand", dark ? p[2] : p[1]); r.style.setProperty("--logo", p[1]);
+  [...$("#sw").children].forEach((b, i) => b.setAttribute("aria-pressed", i === tone.p));
+  [...$("#md").children].forEach((b, i) => b.setAttribute("aria-pressed", MODES[i][1] === tone.m));
+  try { localStorage.setItem("tone", JSON.stringify(tone)); } catch (e) {}
+}
+PAL.forEach((p, i) => { const b = el("button"); b.type = "button"; b.style.background = p[1]; b.setAttribute("aria-label", "สี" + p[0]); b.onclick = () => { tone.p = i; applyTone(); }; $("#sw").append(b); });
+MODES.forEach(([n, m]) => { const b = el("button", null, n); b.type = "button"; b.onclick = () => { tone.m = m; applyTone(); }; $("#md").append(b); });
+mq.addEventListener("change", applyTone);
+applyTone();
+
+/* ---------- history ---------- */
+const hget = () => { try { return JSON.parse(localStorage.getItem("hist") || "[]"); } catch (e) { return []; } };
+function saveHist(d) {
+  if (!d || d.readable === false) return;
+  const a = hget(); a.unshift({ t: Date.now(), d });
+  try { localStorage.setItem("hist", JSON.stringify(a.slice(0, 20))); } catch (e) {}
+  drawHist();
+}
+function drawHist() {
+  const a = hget(), box = $("#hl"); box.replaceChildren(); $("#hist").hidden = !a.length;
+  a.forEach(h => {
+    const b = el("button", "hi"); b.type = "button";
+    b.append(el("span", null, h.d.doc_type || "เอกสาร"), el("span", "hd", new Date(h.t).toLocaleString("th-TH", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })));
+    b.onclick = () => { stopSpeak(); $("#empty").hidden = true; render(h.d); };
+    box.append(b);
+  });
+}
+$("#hclr").onclick = () => { try { localStorage.removeItem("hist"); } catch (e) {} drawHist(); };
+drawHist();
+addEventListener("pagehide", stopSpeak);
+</script>
+</body>
+</html>
